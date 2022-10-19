@@ -1,13 +1,17 @@
 import { useEffect, useState } from "react";
 
-export const useMount = (callback) => {
+export const useMount = (callback: () => void) => {
   useEffect(() => {
     callback();
   }, []);
 };
 
 // 防抖
-export const useDebounce = (value, delay) => {
+interface Value {
+  name: string;
+  personId: string;
+}
+export const useDebounce = (value: Value, delay: number) => {
   const [debounceValue, setDebounceValue] = useState(value);
   useEffect(() => {
     const timeout = setTimeout(() => setDebounceValue(value), delay);

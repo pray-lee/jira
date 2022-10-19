@@ -1,6 +1,9 @@
-export const isFalsy = (value) => (value === 0 ? false : !value);
+export const isFalsy = (value: any) => (value === 0 ? false : !value);
 
-export const cleanObject = (object) => {
+interface Object {
+  [propName: string]: any;
+}
+export const cleanObject = (object: Object) => {
   const obj = Object.assign({}, { ...object });
   Object.keys(obj).forEach((key) => {
     const value = object[key];
