@@ -11,7 +11,7 @@ interface Value {
   name: string;
   personId: string;
 }
-export const useDebounce = (value: Value, delay: number) => {
+export const useDebounce = (value: Value, delay?: number) => {
   const [debounceValue, setDebounceValue] = useState(value);
   useEffect(() => {
     const timeout = setTimeout(() => setDebounceValue(value), delay);

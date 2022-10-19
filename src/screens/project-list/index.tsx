@@ -28,7 +28,7 @@ export const ProjectList = () => {
   });
 
   // 查询条件变更时重新查询工程列表
-  const debounceParams = useDebounce(params, 1000);
+  const debounceParams = useDebounce(params, 300);
   useEffect(() => {
     fetch(`${url}/projects?${qs.stringify(cleanObject(debounceParams))}`).then(
       async (response) => {
