@@ -6,7 +6,7 @@ interface Object {
 export const cleanObject = (object: object) => {
   const obj = Object.assign({}, { ...object });
   Object.keys(obj).forEach((key) => {
-    // @ts-ignore
+    //@ts-ignore
     const value = object[key];
     if (isFalsy(value)) {
       // @ts-ignore
