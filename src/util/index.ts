@@ -3,6 +3,7 @@ export const isFalsy = (value: any) => (value === 0 ? false : !value);
 interface Object {
   [propName: string]: any;
 }
+
 export const cleanObject = (object: object) => {
   const obj = Object.assign({}, { ...object });
   Object.keys(obj).forEach((key) => {
